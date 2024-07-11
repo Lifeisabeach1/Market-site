@@ -1,0 +1,32 @@
+<%- include('./partials/head.ejs') %>
+
+<body>
+  <%- include('./partials/nav.ejs') %>
+
+  <main>
+    <section id="form-section">
+      <h2>Add an Item to sell</h2>
+      <form action="/items" method="POST" enctype="multipart/form-data">
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" required>
+        
+        <label for="price">Price:</label>
+        <input type="number" name="price" id="price" required>
+        
+        <label for="description">Description:</label>
+        <textarea maxlength="150" name="description" id="description" required></textarea>
+
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email" required>
+        
+        <label  for="image">Image:</label>
+        <input class="custom-styling" type="file" name="image" id="image">
+        
+        <button id="shape" type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <%- include('./partials/footer.ejs') %>
+</body>
+</html>

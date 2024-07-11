@@ -1,0 +1,28 @@
+<%- include('./partials/head.ejs') %>
+
+<body>
+  <%- include('./partials/nav.ejs') %>
+
+  <main>
+    <h1><%= title %></h1>
+    <div>
+      <% items.forEach(item => { %>
+        <div>
+          <h2><%= item.title %></h2>
+          <p><%= item.body %></p>
+          <p class="description"><%= item.description %></p>
+          <a class="delete-button" href="/items/<%= item._id %>">More info</a>
+          <% if (item.imagePath) { %>
+          <p><%= item.email %></p>
+            <img src="<%= item.imagePath %>" alt="<%= item.title %>" style="max-width: 200px;">
+          <% } %>
+          <h2 class="price" >Price <%= item.price %> $</h2>
+         
+          
+      <% }) %>
+    </div>
+  </main>
+
+  <%- include('./partials/footer.ejs') %>
+</body>
+</html>
